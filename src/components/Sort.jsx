@@ -10,6 +10,7 @@ export default function Sort({
    isLoading,
    setData,
    isAuthenticated,
+   loginWithRedirect,
 }) {
    const [isDelayed, setIsDelayed] = useState(true);
 
@@ -32,6 +33,15 @@ export default function Sort({
                <Loader />
             </div>
          )}
+         {!isDelayed && !isAuthenticated && (
+            <div className="load">
+               <h1>Login to access the image gallery</h1>
+               <button className="btn" onClick={() => loginWithRedirect()}>
+                  Login
+               </button>
+            </div>
+         )}
+
          {!isDelayed && isAuthenticated && (
             <div>
                <SortableList

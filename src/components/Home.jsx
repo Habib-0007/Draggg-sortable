@@ -82,6 +82,7 @@ let Home = () => {
             isLoading={isLoading}
             setData={setData}
             isAuthenticated={isAuthenticated}
+            loginWithRedirect={loginWithRedirect}
          />
       </div>
    );
